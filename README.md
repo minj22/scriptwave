@@ -86,12 +86,32 @@ generated_text = tokenizer.decode(output[0], skip_special_tokens=True)
 print("Generated script:\n", generated_text)
 
 
-### 2. **감정 분석 및 음악 추천**
-```python
+# 🎭 감정 분석 및 🎶 음악 추천 기능
 
+이 기능은 대본 생성 후 **Hugging Face 감정 분석 모델**을 사용하여 대본의 감정을 분석하고, 그에 맞는 **음악을 추천**합니다. 대본을 절반으로 나누어 각각의 감정을 분석하며, 각 부분의 감정에 맞는 음악을 제공합니다.
+
+---
+
+## 📋 기능 설명
+
+### 1. **감정 분석**:
+- 대본을 절반으로 나누어 **감정 분석**을 수행합니다.
+- 감정은 `happy`, `sad`, `neutral`의 세 가지로 분류됩니다.
+  
+### 2. **음악 추천**:
+- 분석된 감정에 따라 미리 정의된 **음악 데이터**에서 감정에 맞는 음악을 추천합니다.
+- 음악은 `danceability`, `energy`, `key` 등 다양한 특성을 기반으로 선택됩니다.
+
+---
+
+## 💻 코드 사용법
+
+### 1. **감정 분석 함수**:
+Hugging Face 감정 분석 모델을 사용하여 대본을 절반으로 나눠 분석합니다.
+
+```python
 # Hugging Face 감정 분석기 초기화
 from transformers import pipeline
-import pandas as pd
 
 # 감정 분석 파이프라인 로드
 emotion_analyzer = pipeline("sentiment-analysis")
@@ -113,7 +133,13 @@ def analyze_emotion_hf_halves(script):
 
     return first_half_emotion, second_half_emotion
 
-# 3. 음악 추천 함수 (Hugging Face 감정 분석 사용)
+
+## 📋 코드 설명
+
+### 1. **음악 추천 함수**
+Hugging Face의 감정 분석 모델을 사용해 대본을 절반으로 나눈 후 감정에 맞는 음악을 추천하는 함수입니다.
+
+```python
 def recommend_music_hf_halves(script, music_data):
     # 텍스트를 반으로 나눠서 감정 분석
     first_half_emotion, second_half_emotion = analyze_emotion_hf_halves(script)
@@ -160,9 +186,27 @@ def recommend_music_hf_halves(script, music_data):
 # 6. 대본에 맞는 음악 추천 (반으로 나누어 감정 분석)
 recommendations = recommend_music_hf_halves(generated_text, music_data)
 
-# 7. 추천 결과 출력
+# 🎶 음악 추천 결과 출력
+
+이 섹션에서는 **대본의 감정 분석**을 바탕으로 추천된 음악 결과를 **출력**하는 방법을 설명합니다. 감정 분석 결과에 따라 음악을 추천하고, 이를 보기 쉽게 출력할 수 있도록 구성된 코드입니다.
+
+---
+
+## 💡 기능 설명
+
+- **감정 분석**과 **음악 추천**이 완료된 후, 추천된 음악과 해당 감정 정보를 사용자에게 출력합니다.
+- 각 대본의 절반에 맞춰 **감정**과 **추천된 음악**을 각각 출력합니다.
+- 음악의 **Spotify 링크**도 제공되어, 바로 음악을 확인할 수 있습니다.
+
+---
+
+## 📋 코드 설명
+
+```python
+# 추천 결과 출력
 for recommendation in recommendations:
     recommended_music, emotion, half = recommendation
     print(f"{half.capitalize()} emotion: {emotion}")
     print(f"Recommended Music: {recommended_music['Track']} by {recommended_music['Artist']}")
     print(f"Spotify URL: {recommended_music['Url_spotify']}\n")
+
