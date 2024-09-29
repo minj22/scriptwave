@@ -84,7 +84,7 @@ generated_text = tokenizer.decode(output[0], skip_special_tokens=True)
 
 # 생성된 대본 출력
 print("Generated script:\n", generated_text)
-'''
+```
 
 # 🎭 감정 분석 및 🎶 음악 추천 기능
 
@@ -133,7 +133,7 @@ def analyze_emotion_hf_halves(script):
 
     return first_half_emotion, second_half_emotion
 
-
+```
 ## 📋 코드 설명
 
 ### 1. **음악 추천 함수**
@@ -185,7 +185,7 @@ def recommend_music_hf_halves(script, music_data):
     return recommendations  # 두 부분에 대한 음악 추천을 반환
 # 6. 대본에 맞는 음악 추천 (반으로 나누어 감정 분석)
 recommendations = recommend_music_hf_halves(generated_text, music_data)
-
+```
 # 🎶 음악 추천 결과 출력
 
 이 섹션에서는 **대본의 감정 분석**을 바탕으로 추천된 음악 결과를 **출력**하는 방법을 설명합니다. 감정 분석 결과에 따라 음악을 추천하고, 이를 보기 쉽게 출력할 수 있도록 구성된 코드입니다.
@@ -209,4 +209,4 @@ for recommendation in recommendations:
     print(f"{half.capitalize()} emotion: {emotion}")
     print(f"Recommended Music: {recommended_music['Track']} by {recommended_music['Artist']}")
     print(f"Spotify URL: {recommended_music['Url_spotify']}\n")
-
+```
