@@ -85,9 +85,9 @@ generated_text = tokenizer.decode(output[0], skip_special_tokens=True)
 # 생성된 대본 출력
 print("Generated script:\n", generated_text)
 
-
+```python
 ### 1. **감정 분석 및 음악 추천**
-
+```python
 ```python
 # Hugging Face 감정 분석기 초기화
 from transformers import pipeline
