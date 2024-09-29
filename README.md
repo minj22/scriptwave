@@ -84,7 +84,7 @@ generated_text = tokenizer.decode(output[0], skip_special_tokens=True)
 
 # 생성된 대본 출력
 print("Generated script:\n", generated_text)
-
+'''
 
 # 🎭 감정 분석 및 🎶 음악 추천 기능
 
