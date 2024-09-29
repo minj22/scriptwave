@@ -136,7 +136,7 @@ def analyze_emotion_hf_halves(script):
 ```
 ## 📋 코드 설명
 
-### 1. **음악 추천 함수**
+### 2. **음악 추천 함수**
 Hugging Face의 감정 분석 모델을 사용해 대본을 절반으로 나눈 후 감정에 맞는 음악을 추천하는 함수입니다.
 
 ```python
