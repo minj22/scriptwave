@@ -86,7 +86,7 @@ generated_text = tokenizer.decode(output[0], skip_special_tokens=True)
 print("Generated script:\n", generated_text)
 
 
-### 1. **감정 분석 및 음악 추천 코드**
+### 2.**감정 분석 및 음악 추천 코드**
 
 ```python
 # Hugging Face 감정 분석기 초기화
