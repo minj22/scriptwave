@@ -210,3 +210,6 @@ for recommendation in recommendations:
     print(f"Recommended Music: {recommended_music['Track']} by {recommended_music['Artist']}")
     print(f"Spotify URL: {recommended_music['Url_spotify']}\n")
 ```
+https://huggingface.co/datasets/li2017dailydialog/daily_dialog 위 데이터셋 이용
+![image](https://github.com/user-attachments/assets/3a425d27-6912-4342-bee0-626f91335d89) 성능 결과
+모델 테스트 및 음악 추천 ipynb파일에 가면 결과를 볼 수 있음
