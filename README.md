@@ -212,8 +212,8 @@ for recommendation in recommendations:
 ```
 https://huggingface.co/datasets/li2017dailydialog/daily_dialog 위 데이터셋 이용
 ![image](https://github.com/user-attachments/assets/3a425d27-6912-4342-bee0-626f91335d89) 
-성능 결과
+#성능 결과
 모델 테스트 및 음악 추천 ipynb파일에 가면 결과를 볼 수 있음
-성능의 향상을 원한다면 모델 생성하기 파일에서 코드 수정 가능
+#성능의 향상을 원한다면 모델 파인튜닝 파일에서 코드 수정 가능
 ![image](https://github.com/user-attachments/assets/37331045-9156-4346-82f8-7175b9261c34)
 
